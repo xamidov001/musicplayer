@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202020"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.HomeFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/item"
+        android:layoutAnimation="@anim/layout_anim"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:visibility="gone"
+        android:background="#2B2B2B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/music_image"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintHeight_percent="0.7"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+            <ImageView
+                android:id="@+id/big_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/stellio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_marginHorizontal="10dp"
+            android:text="Miyagi"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintLeft_toRightOf="@id/music_image"
+            app:layout_constraintRight_toLeftOf="@id/back_btn"
+            android:singleLine="true"
+            app:layout_constraintBottom_toTopOf="@id/music_name"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginHorizontal="10dp"
+            android:text="Miyagi"
+            app:layout_constraintLeft_toRightOf="@id/music_image"
+            app:layout_constraintRight_toLeftOf="@id/back_btn"
+            android:singleLine="true"
+            android:textColor="#BCBCBC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/author"
+            android:id="@+id/music_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/next_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_baseline_skip_next_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="#FFD600"
+            app:cardCornerRadius="20dp"
+            android:id="@+id/start_pause"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/next_btn"
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp">
+            <ImageView
+                android:id="@+id/play_music_bottom"
+                android:padding="12dp"
+                android:src="@drawable/ic_play"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/back_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/start_pause"
+            android:rotation="180"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_baseline_skip_next_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
